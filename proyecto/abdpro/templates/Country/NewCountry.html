@@ -1,0 +1,93 @@
+{% extends 'base/base.html' %}
+<!-- Se cargan los estáticos-->
+{% load static %}
+<!-- Inicio bloque título-->
+{%block tittle %} Crear Pais {% endblock tittle %}
+<!-- Fin bloque título-->
+{% block body %}
+<!-- inicio nav -->
+{% include 'base/menu.html' %}
+<div class="Container">
+  <div class="ContainerPais">
+    <h1 class="ContainerPaisTitulo m-3">Agregar Pais</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Codigo: {{form.code}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Nombre del pais: {{form.name}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Continente: {{form.continent}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Region: {{form.region}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Superficie: {{form.surface_area}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Dia independencia: {{form.independence}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Poblacion: {{form.population}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Esperanza de Vida: {{form.life_expectancy}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Producto Bruto: {{form.gnp}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Producto Bruto Anterior: {{form.gnp_old}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Nombre local: {{form.local_name}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Forma de Gobierno: {{form.government_form}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Jefe de estado: {{form.head_of_state}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Capital: {{form.capital}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Area cultivable: {{form.arable_land_area}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        HDI: {{form.hdi}}
+      </div>
+      <div class="ContainerPaisFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Moneda nacional: {{form.national_currency}}
+      </div>
+      <button type="submit" class="btn btn-primary m-3 btn-lg">Guardar</button>
+    </form>
+    <a
+      class="btn btn-outline-secondary"
+      href="{% url 'inicio_app:InicioTemplateView' %}"
+    >
+      Volver
+    </a>
+  </div>
+</div>
+{% include 'base/footer.html' %} {% endblock body %}

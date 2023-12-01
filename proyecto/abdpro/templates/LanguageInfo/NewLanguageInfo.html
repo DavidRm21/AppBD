@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+<!-- Se cargan los estáticos-->
+{% load static %}
+<!-- Inicio bloque título-->
+{%block tittle %} Crear Languages {% endblock tittle %}
+<!-- Fin bloque título-->
+{% block body %}
+<!-- inicio nav -->
+{% include 'base/menu.html' %}
+<div class="Container">
+  <div class="ContainerLanguage">
+    <h1 class="ContainerLanguageTitulo m-3">Agregar Lenguaje</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="ContainerLanguageFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Nombre del lenguaje: {{form.language}}
+      </div>
+      <div class="ContainerLanguageFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Es oficial: {{form.isOfficial}}
+      </div>
+      <div class="ContainerLanguageFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Porcentaje: {{form.Percentege}}
+      </div>
+      <div class="ContainerLanguageFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Codigo ISO: {{form.ISOCode}}
+      </div>
+      <div class="ContainerLanguageFieldsField m-3">
+        <!-- Nombre del departamento-->
+        Nivel de lenguaje: {{form.languageLevel}}
+      </div>
+      <button type="submit" class="btn btn-primary m-3 btn-lg">Guardar</button>
+    </form>
+    <a
+      class="btn btn-outline-secondary"
+      href="{% url 'inicio_app:InicioTemplateView' %}"
+    >
+      Volver
+    </a>
+  </div>
+</div>
+{% include 'base/footer.html' %} {% endblock body %}
